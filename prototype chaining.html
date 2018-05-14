@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html> 
+ <head>
+	<title>Form</title>
+ </head>
+ <body>
+	<script>
+
+		function intel(processor){
+
+		}
+		//parent
+		function Apple(obje){    
+		debugger;        //Constructor function//
+			 obje= this.appl;
+			 /*this.accessories = accessories;
+			 this.warranty = warranty;
+			 this.processor = processor;
+			 this.exchange = exchange;*/
+			}
+		var appl={
+				model:'iphonex',
+				accesories:'earphones',
+				warranty:'one year',
+				processor:'A11',
+				exchange:'no'
+
+			//child
+		}
+		
+		function Nissan(name,type){
+			 this.name = name;
+			 this.type = type;
+			}
+		Apple.prototype.price = 1000;
+		var app = new Apple('iphonex','earphones','one year','A11','no');      //Making the child function to inherit the properties of parent function//
+
+		Nissan.prototype=new Apple(appl);
+		var nis= new Nissan('verna','v4');
+		console.log(nis.model);
+		//console.log(nis.processor);
+		
+
+	</script>
+  </body>
+</html>

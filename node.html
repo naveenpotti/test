@@ -1,0 +1,6 @@
+Var http=require('http');
+var server=http.createserver(function(req,res)){
+	res.writeHead(200,{'Content-Type':'text/plain'});
+	res.end('node');
+});
+server.listen(8080);

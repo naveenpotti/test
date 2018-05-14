@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>AJAX</title>
+	
+</head>
+<body>
+
+	<SCRIPT TYPE="text/javascript">
+		
+		var req;
+		var info;
+		if(window.XMLHttpRequest){
+			req = new XMLHttpRequest();
+		}else{
+			req = new ActiveXObject("Microsoft.HTTP");
+		}
+
+			req.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				debugger;
+				info = JSON.parse(this.response);
+				getImage(info);
+			}
+		};
+		req.open("GET", "http://www.snagfilms.com/apis/films.json?limit=10");
+
+	 	req.send();
+		function getImage(info){
+			var i;
+		    var filmcount = info.films.film.length;
+		    var urls = new Array(filmcount);
+		    var imgelem = new Array(filmcount);
+		    for(i=0;i<filmcount;i++){
+				imgurls[i]= info.films.film[i].images.image[0].src;
+				imgelem[i] = document.createElement("img");
+				imgelem[i].src=imgurls[i];
+			
+				document.body.appendChild(imgelem[i]);
+			}
+			
+		}
+
+	</SCRIPT>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html> 
+ <head>
+	<title>Form</title>
+ </head>
+ <body>
+	<script>
+		function apple(model,accessories,warranty,processor, exchange){            //Constructor function//
+			 this.model = model;
+			 this.accessories = accessories;
+			 this.warranty = warranty;
+			 this.processor = processor;
+			 this.exchange = exchange;
+			}
+		function nissan(name,type){
+			 this.name = name;
+			 this.type = type;
+			}
+		apple.prototype.price = 1000;
+		var app = new apple('iphonex','earphones','one year','A11','no');      //created instance using new keyword and stored in variable app//
+		var app2 = new nissan('altima','v6');								  //created instance using new keyword and stored in variable app2//
+		
+	</script>
+  </body>
+</html>
